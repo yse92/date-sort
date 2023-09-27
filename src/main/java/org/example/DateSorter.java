@@ -24,7 +24,11 @@ public class DateSorter {
         List<LocalDate> resultList = new ArrayList<>();
         List<LocalDate> listWithoutR = new ArrayList<>();
         //algorithm
-        //1.create
+        //1.create empty lists
+        //2.sort them if they have 'r'
+        //3.sort asc for non-r
+        //4.sort desc for 'r'
+        //5.concat both lists
         unsortedDates.forEach(date -> {
             if (date.getMonthValue() <= 4 || date.getMonthValue() >= 9) {
                 resultList.add(date);
