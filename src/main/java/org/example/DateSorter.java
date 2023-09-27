@@ -23,7 +23,8 @@ public class DateSorter {
     public Collection<LocalDate> sortDates(List<LocalDate> unsortedDates) {
         List<LocalDate> resultList = new ArrayList<>();
         List<LocalDate> listWithoutR = new ArrayList<>();
-
+        //algorithm
+        //1.create
         unsortedDates.forEach(date -> {
             if (date.getMonthValue() <= 4 || date.getMonthValue() >= 9) {
                 resultList.add(date);
