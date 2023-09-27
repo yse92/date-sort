@@ -1,10 +1,7 @@
 package org.example;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class DateSorter {
     /**
@@ -35,22 +32,10 @@ public class DateSorter {
             }
         });
 
-        resultList.sort(new DateComparator());
-        listWithoutR.sort(new DateComparator());
+        Collections.sort(resultList);
+        listWithoutR.sort(Collections.reverseOrder());
         resultList.addAll(listWithoutR);
 
         return resultList;
-    }
-
-    static class DateComparator implements Comparator<LocalDate> {
-        @Override
-        public int compare(LocalDate date1, LocalDate date2) {
-            if(date1.getMonthValue() <= 4 || date1.getMonthValue() >= 9
-                && date2.getMonthValue() <= 4 || date2.getMonthValue() >= 9) {
-                return date1.compareTo(date2);
-            } else {
-                return -1 * date1.compareTo(date2);
-            }
-        }
     }
 }
